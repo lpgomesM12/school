@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
  validates :name, :description, :status, presence: true
+ has_many :classrooms, dependent: :destroy
  
  enum status: {ativo: 1, inativo: 2}
 
