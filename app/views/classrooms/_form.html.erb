@@ -1,0 +1,48 @@
+<%= form_for(classroom) do |f| %>
+  <% if classroom.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% classroom.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="row">
+    <div class="col-lg-8">
+      <label>Alunos</label>
+      <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Pesquise pelo aluno" value="<%=@classroom.student_id == nil ? '' :  @classroom.student.name%>" onfocus="javascript:$(this).autocomplete('search','');">
+      <%= f.hidden_field :student_id%>
+    </div>
+  </div>
+ 
+  <br>
+ 
+  <div class="row">
+     <div class="col-lg-8">
+      <label>Curso</label>
+      <input type="text" class="form-control input-lg" name="course" id="course" placeholder="Pesquise pelo curso" value="<%= @classroom.course_id == nil ? '' : @classroom.course.name%>" onfocus="javascript:$(this).autocomplete('search','');">
+      <%= f.hidden_field :course_id%>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+ <div class="row mar-bot40">
+   <div class="col-lg-8" >
+     <div class="btn-group">
+       <button type="submit" value="Submit" class="btn btn-primary btn-sm">
+       <span class="glyphicon glyphicon-floppy-disk"></span> Matrícular
+      </button>
+      <%= link_to classrooms_path, :class => "btn btn-default btn-sm" do %>
+          <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+        <% end %>
+     </div>
+   </div>
+ </div>
+<% end %>
+
+
+

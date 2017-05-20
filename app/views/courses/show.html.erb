@@ -1,0 +1,39 @@
+<% unless notice.blank?%> 
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+<%end%>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Curso</div>
+    <div class="panel-body">
+    <p>
+      <strong>Name:</strong>
+      <%= @course.name %>
+    </p>
+
+    <p>
+      <strong>Descrição:</strong>
+      <%= @course.description %>
+    </p>
+
+    <p>
+      <strong>Status:</strong>
+      <%= @course.status.titleize %>
+    </p>
+  </div>
+</div>
+
+<div class="row mar-bot40">
+  <div class="col-lg-8" >
+    <div class="btn-group">
+      <%= link_to edit_course_path(@course), :class => "btn btn-default btn-sm" do %>
+          <span class="glyphicon glyphicon-pencil"></span> Editar
+      <% end %>
+      <%= link_to courses_path, :class => "btn btn-default btn-sm" do %>
+          <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+      <% end %>
+    </div>
+   </div>
+</div>
