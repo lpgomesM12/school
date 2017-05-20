@@ -1,9 +1,8 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
-  
   def search_student
-    @students = Student.search(params[:term]).limit(6).order(:name)
+    @students = Student.search(params[:term]).limit(6).order(:name).ativo
   end
 
 

@@ -1,18 +1,24 @@
 ---
 pt-BR:
   activerecord:
+    models:
+      student: ""
+      course: "" 
+      classroom: ""
     errors:
+    models:
+      student: ""
     attributes:
-      course:
+      course: 
         name: "Nome"
         description: "Descrição"
-      student:
+      student: 
         name: "Nome"
         register_number: "Número do registro"
       classrooms:
+        student: ""
         student_id: "Aluno"
         course_id: "Curso"  
-
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:

@@ -1,9 +1,8 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  
   def search_course
-    @course = Course.search(params[:term]).limit(6).order(:name)
+    @course = Course.search(params[:term]).limit(6).order(:name).ativo
   end
 
   def index
